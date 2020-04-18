@@ -1,0 +1,26 @@
+#!/bin/bash
+########################################################################3
+# SUGOS REMASTER SCRIPT FOR MAKE DISTRO FROM ISO FILE
+# AUTHOR    : SUGOS LINUX
+# LICENSE   : GNU GPL 3.0
+# WEB       : https://github.com/SUGOS-GNU-Linux
+########################################################################
+
+# Use the following commands in sequence to start the project remaster
+mkdir ./SUGOSLINUX
+cd ./SUGOSLINUX
+mkdir dvd mnt
+# Make sure the iso file is in the location would diremaster your HOME directory
+sudo mount -o loop ./linuxmint-19.3-xfce-64bit.iso mnt
+# Please edit the name of an ISO-EDIT-NAME-HERE-TO-MAKE-DIREMASTER with iso name that would in remaster
+sudo rsync --exclude=/casper/filesystem.squashfs -a ./mnt/ ./dvd
+sudo unsquashfs ./mnt/casper/filesystem.squashfs
+sudo mv ./squashfs-root ./root64
+sudo cp /etc/resolv.conf ./root64/etc/
+sudo mount --bind /dev/ ./root64/dev
+sudo chroot ./root64
+mount -t proc none /proc && mount -t sysfs none /sys && mount -t devpts none /dev/pts
+export HOME=/root && export LC_ALL=C
+cd /etc/skel
+mkdir Desktop Documents Downloads Music Pictures Public Templates Videos
+cd /
