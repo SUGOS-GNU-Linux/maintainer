@@ -10,6 +10,6 @@ sudo cp ./dvd/casper/filesystem.manifest ./dvd/casper/filesystem.manifest-deskto
 cd ./dvd/
 find -type f -print0 | sudo xargs -0 md5sum | grep -v isolinux/boot.cat | sudo tee MD5SUMS
 cd ..
-sudo mkisofs -r -V "sugos-1.0-xfce-amd64" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../sugos-1.0-xfce-amd64.iso dvd
-cd .. && sudo chmod 777 sugos-1.0-xfce-amd64.iso
-isohybrid sugos-1.0-xfce-amd64.iso
+sudo mkisofs -r -V "sugos-1.0-xfce-amd64" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../sugos-1.0-xfce-amd64-beta.iso dvd
+cd .. && sudo chmod 777 sugos-1.0-xfce-amd64-beta.iso
+isohybrid sugos-1.0-xfce-amd64-beta.iso
