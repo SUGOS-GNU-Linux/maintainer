@@ -1,0 +1,13 @@
+Source: paketku
+Section: utils
+Priority: optional
+Maintainer: Reza Zulkarnain (SUGOS) <sugosdeveloper@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.7
+Homepage: https://github.com/SUGOS-GNU-Linux/packages
+Vcs-Browser: https://github.com/SUGOS-GNU-Linux/packages.git
+
+Package: packages
+Architecture: all
+Description: packages.
+ packages
