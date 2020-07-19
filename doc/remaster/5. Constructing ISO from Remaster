@@ -33,7 +33,7 @@ sudo rm MD5SUMS
 find -type f -print0 | sudo xargs -0 md5sum | grep -v isolinux/boot.cat | sudo tee MD5SUMS
 
 # Create the ISO image 
-# Please rename the xentaos iso-1.3.2-amd64-cinnamon as you want
+# Please rename the sugosos-1.0-xfce-amd64.iso as you want
 cd $HOME/livecdtmp 
-sudo mkisofs -r -V "xentaos-1.3.2-cinnamon-amd64" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../xentaos-1.3.2-cinnamon-amd64.iso extract-cd
-cd .. && sudo chmod 777 xentaos-1.3.2-cinnamon-amd64.iso
+sudo mkisofs -r -V "sugosos-1.0-xfce-amd64.iso" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../sugosos-1.0-xfce-amd64.iso.iso extract-cd
+cd .. && sudo chmod 777 sugosos-1.0-xfce-amd64.iso.iso
